@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace PairProgrammingTests
 {
     [TestClass]
-    public class UnitTest1
+    public class BackendTests
     {
         private RecordManager _manager;
         [TestInitialize]

@@ -17,7 +17,9 @@
   <body>
     <h2>Get All Records</h2>
     <div id="app">
-      <p v-if="records.length > 0" v-for="r in records">{{r}}</p>
+      <ul id="recordsList" v-if="records.length > 0">
+        <li v-for="r in records">{{r}}</li>
+      </ul>
     </div>
     <script src="index.js"></script>
   </body>
