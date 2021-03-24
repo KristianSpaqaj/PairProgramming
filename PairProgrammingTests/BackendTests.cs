@@ -23,7 +23,7 @@ namespace PairProgrammingTests
         [TestMethod]
         public void GetAll_Should_Return_3()
         {
-            List<Record> results = _manager.GetAll();
+            List<Record> results = _manager.GetAll(null,null,null,null);
             Assert.AreEqual(results.Count, 3);
         }
     }
