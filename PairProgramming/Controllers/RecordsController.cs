@@ -26,9 +26,9 @@ namespace PairProgramming.Controllers
         // GET: api/<RecordsController>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<List<Record>> Get()
+        public ActionResult<List<Record>> Get([FromQuery]string title, string artist, int? duration, DateTime date)
         {
-            return Ok(_manager.GetAll());
+            return Ok(_manager.GetAll(title, artist, duration, date));
         }
 
         // GET api/<RecordsController>/5
