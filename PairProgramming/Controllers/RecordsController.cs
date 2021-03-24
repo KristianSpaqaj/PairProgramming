@@ -16,7 +16,9 @@ namespace PairProgramming.Controllers
     {
         private static RecordManager _manager = new RecordManager(new List<Record>()
         {
-
+            new Record(1,"Silver star", "Frank Valli & The Four Seasons", 362, new DateTime(1975, 11, 1)),
+            new Record(2,"Heartless", "The Weeknd", 201, new DateTime(2019, 11, 27)),
+            new Record(3,"Flashing Lights", "Kanye West", 237, new DateTime(2007, 11, 12)),
         });
 
 
@@ -31,7 +33,7 @@ namespace PairProgramming.Controllers
         [HttpGet("{id}")]
         public Record Get(int id)
         {
-            return _manager.GetById();
+            return _manager.GetById(id);
         }
 
         // POST api/<RecordsController>

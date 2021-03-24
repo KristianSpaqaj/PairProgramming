@@ -4,36 +4,36 @@ using System.Collections.Generic;
 
 namespace PairProgramming.Managers
 {
-    internal class RecordManager
+    public class RecordManager
     {
-        private List<Record> lists;
+        private List<Record> Data;
 
-        public RecordManager(List<Record> lists)
+        public RecordManager(List<Record> data)
         {
-            this.lists = lists;
+            Data = data;
         }
 
-        internal IEnumerable<Record> GetAll()
+        public IEnumerable<Record> GetAll()
         {
-            throw new NotImplementedException();
+            return Data;
         }
 
-        internal Record GetById()
+        public Record GetById(int id)
         {
-            throw new NotImplementedException();
+            return Data.Find((record) => record.Id == id)
         }
 
-        internal Record Add(Record value)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal Record Update(int id, Record value)
+        public Record Add(Record value)
         {
             throw new NotImplementedException();
         }
 
-        internal bool Delete(int id)
+        public Record Update(int id, Record value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
