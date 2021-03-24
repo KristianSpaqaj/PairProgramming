@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PairProgramming.Managers;
 using PairProgramming.Model;
@@ -24,16 +25,27 @@ namespace PairProgramming.Controllers
 
         // GET: api/<RecordsController>
         [HttpGet]
-        public IEnumerable<Record> Get()
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public ActionResult<List<Record>> Get()
         {
-            return _manager.GetAll();
+            return Ok(_manager.GetAll());
         }
 
         // GET api/<RecordsController>/5
         [HttpGet("{id}")]
-        public Record Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<Record> Get(int id)
         {
-            return _manager.GetById(id);
+            Record result =  _manager.GetById(id);
+            if (result == null)
+            {
+                return NotFound("id not found " + id);
+            }
+            else
+            {
+                return Ok(result);
+            }
         }
 
         // POST api/<RecordsController>

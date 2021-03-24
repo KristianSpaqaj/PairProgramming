@@ -9,9 +9,9 @@ namespace PairProgrammingTests
     [TestClass]
     public class UnitTest1
     {
-        private static RecordManager _manager;
+        private RecordManager _manager;
         [TestInitialize]
-        public static void Init(TestContext ctx)
+        public void Init()
         {
             _manager = new RecordManager(new List<Record>()
             {
@@ -21,8 +21,10 @@ namespace PairProgrammingTests
             });
         }
         [TestMethod]
-        public void TestMethod1()
+        public void GetAll_Should_Return_3()
         {
+            List<Record> results = _manager.GetAll();
+            Assert.AreEqual(results.Count, 3);
         }
     }
 }

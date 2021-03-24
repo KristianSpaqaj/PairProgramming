@@ -13,14 +13,14 @@ namespace PairProgramming.Managers
             Data = data;
         }
 
-        public IEnumerable<Record> GetAll()
+        public List<Record> GetAll()
         {
             return Data;
         }
 
         public Record GetById(int id)
         {
-            return Data.Find((record) => record.Id == id)
+            return Data.Find((record) => record.Id == id);
         }
 
         public Record Add(Record value)
