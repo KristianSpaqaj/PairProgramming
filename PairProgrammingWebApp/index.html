@@ -17,6 +17,8 @@
   <body>
     <h2>Get All Records</h2>
     <div id="app">
+      <input id="titleinput" v-model="title"/>
+      <button id="titlebutton" v-on:click="GetRecords()">Search</button>
       <ul id="recordsList" v-if="records.length > 0">
         <li v-for="r in records">{{r}}</li>
       </ul>
