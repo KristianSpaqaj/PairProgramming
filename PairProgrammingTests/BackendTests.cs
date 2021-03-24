@@ -26,5 +26,14 @@ namespace PairProgrammingTests
             List<Record> results = _manager.GetAll(null,null,null,null);
             Assert.AreEqual(results.Count, 3);
         }
+
+        [TestMethod]
+        public void GetAll_Duration_ShouldFilterShorterDurationsOut()
+        {
+            int duration = 250;
+            List<Record> result = _manager.GetAll(null, null, duration, null);
+            Record shorterDurationRecord = result.Find(r => r.Duration > duration);
+            Assert.IsTrue(shorterDurationRecord == null);
+        }
     }
 }
