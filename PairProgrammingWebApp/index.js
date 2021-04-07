@@ -4,6 +4,7 @@ Vue.createApp({
             records: [],
             title: "",
             artist: "",
+            addData: {title: "", artist: "", duration: null, releasedate: null},
             duration: null,
             releasedate: null
         }
@@ -14,8 +15,13 @@ Vue.createApp({
                 this.records = response["data"];
 
             }.bind(this))
+        },
+        AddRecord()
+        { 
+            axios.post("https://pairprogramming20210324110603.azurewebsites.net/api/records", this.addData)
         }
     },
+        
     created: function(){
         this.GetRecords();
     }

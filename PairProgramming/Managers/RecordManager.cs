@@ -8,10 +8,12 @@ namespace PairProgramming.Managers
     public class RecordManager
     {
         private List<Record> Data;
+        public static int _nextId = 1;
 
         public RecordManager(List<Record> data)
         {
             Data = data;
+            _nextId = data.OrderByDescending((r) => r.Id).First().Id;
         }
 
 
@@ -32,7 +34,9 @@ namespace PairProgramming.Managers
 
         public Record Add(Record value) 
         {
-            throw new NotImplementedException();
+            value.Id = ++_nextId;
+            Data.Add(value);
+            return value;
         }
 
         public Record Update(int id, Record value)

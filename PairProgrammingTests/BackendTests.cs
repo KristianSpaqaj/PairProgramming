@@ -35,5 +35,14 @@ namespace PairProgrammingTests
             Record shorterDurationRecord = result.Find(r => r.Duration > duration);
             Assert.IsTrue(shorterDurationRecord == null);
         }
+
+       [TestMethod]
+       public void Add()
+        {
+            //Record r = new Record(5, "I Wonder Why", "Dion and the belmonts", 121, new DateTime(1959, 1, 1));
+            Record r = new Record() {Title = "I Wonder Why", Artist = "Dion an the Belmonts", Duration = 121, ReleaseDate = new DateTime(1959,1,1) };
+            Record added = _manager.Add(r);
+            Assert.AreEqual(4, added.Id);
+        }
     }
 }

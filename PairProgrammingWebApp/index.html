@@ -17,11 +17,17 @@
   <body>
     <h2>Get All Records</h2>
     <div id="app">
-      <input id="titleinput" v-model="title"/>
+      <input id="titleinput" v-model="title"/> &nbsp;
       <button id="titlebutton" v-on:click="GetRecords()">Search</button>
       <ul id="recordsList" v-if="records.length > 0">
         <li v-for="r in records">{{r}}</li>
       </ul>
+      <input v-model="addData.title" placeholder="title"/> &nbsp;
+      <input v-model="addData.artist" placeholder="artist"/> &nbsp;
+      <input v-model.number="addData.duration" placeholder="duration"/> &nbsp;
+      <input v-model="addData.releasedate" type="datetime" placeholder="release date"/> &nbsp;
+      <button id="addbutton" v-on:click="AddRecord()" class="btn btn-primary">Add</button>
+
     </div>
     <script src="index.js"></script>
   </body>
