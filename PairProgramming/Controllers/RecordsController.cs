@@ -17,16 +17,16 @@ namespace PairProgramming.Controllers
     {
         private static RecordManager _manager = new RecordManager(new List<Record>()
         {
-            new Record(1,"Silver star", "Frank Valli & The Four Seasons", 362, new DateTime(1975, 11, 1)),
-            new Record(2,"Heartless", "The Weeknd", 201, new DateTime(2019, 11, 27)),
-            new Record(3,"Flashing Lights", "Kanye West", 237, new DateTime(2007, 11, 12)),
+            new Record(1,"Silver star", "Frank Valli & The Four Seasons", 362, 1975),
+            new Record(2,"Heartless", "The Weeknd", 201, 2019),
+            new Record(3,"Flashing Lights", "Kanye West", 237, 2007),
         });
 
 
         // GET: api/<RecordsController>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<List<Record>> Get([FromQuery]string title, string artist, int? duration, DateTime? date)
+        public ActionResult<List<Record>> Get([FromQuery]string title, string artist, int? duration, int? date)
         {
             return Ok(_manager.GetAll(title, artist, duration, date));
         }

@@ -4,9 +4,10 @@ Vue.createApp({
             records: [],
             title: "",
             artist: "",
-            addData: {title: "", artist: "", duration: null, releasedate: null},
+            addData: {title: "", artist: "", duration: null},
             duration: null,
-            releasedate: null
+            releasedate: null,
+            addmessage: ""
         }
     },
     methods: {
@@ -16,9 +17,14 @@ Vue.createApp({
 
             }.bind(this))
         },
-        AddRecord()
-        { 
-            axios.post("https://pairprogramming20210324110603.azurewebsites.net/api/records", this.addData)
+        async AddRecord()
+        { try {
+            console.log(this.addData)
+            response = await axios.post("https://pairprogramming20210324110603.azurewebsites.net/api/records", this.addData)
+            this.addmessage = "response " + response.status + " " + response.statusText
+        } catch (ex) { 
+            alert(ex.message)
+        } 
         }
     },
         

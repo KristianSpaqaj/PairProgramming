@@ -17,7 +17,7 @@ namespace PairProgramming.Managers
         }
 
 
-        public List<Record> GetAll(string title, string artist, int? duration, DateTime? date)
+        public List<Record> GetAll(string title, string artist, int? duration, int? date)
         {
             return Data
                 .Where(r => title == null ? true : r.Title.Contains(title))

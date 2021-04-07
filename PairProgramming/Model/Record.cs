@@ -11,14 +11,14 @@ namespace PairProgramming.Model
         public string Title { get; set; }
         public string Artist { get; set; }
         public int Duration { get; set; }
-        public DateTime ReleaseDate { get; set; }
+        public int ReleaseDate { get; set; }
 
         public Record()
         {
 
         }
 
-        public Record(int id, string title, string artist, int duration, DateTime releaseDate)
+        public Record(int id, string title, string artist, int duration, int releaseDate)
         {
             Id = id;
             Title = title;
