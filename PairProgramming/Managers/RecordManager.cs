@@ -29,7 +29,7 @@ namespace PairProgramming.Managers
             return Data.Find((record) => record.Id == id);
         }
 
-        public Record Add(Record value)
+        public Record Add(Record value) 
         {
             throw new NotImplementedException();
         }
