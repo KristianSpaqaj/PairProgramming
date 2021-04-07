@@ -14,6 +14,7 @@ namespace PairProgramming.Managers
             Data = data;
         }
 
+
         public List<Record> GetAll(string title, string artist, int? duration, DateTime? date)
         {
             return Data
